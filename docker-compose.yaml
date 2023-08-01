@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  server:
+    build: ./server
+    container_name: server_c
+    image: server_dct_img:1.0.0
+    ports:
+      - '5000:5000'
+
+  client:
+    build: ./client
+    container_name: client_c
+    image: client_dct_img:1.0.0
+    ports:
+      - '3000:3000'
+    stdin_open: true
